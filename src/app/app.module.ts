@@ -8,9 +8,10 @@ import { UsersComponent } from './components/users/users.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HackatonService } from './services/hackaton.service';
+import { JobsComponent } from './components/jobs/jobs.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, UsersComponent],
+  declarations: [AppComponent, MenuComponent, UsersComponent, JobsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [HackatonService],
   bootstrap: [AppComponent],

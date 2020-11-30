@@ -16,8 +16,10 @@ export class HackatonService {
     var header = new HttpHeaders()
       .set('user', 'S2VTournament')
       .set('password', 'sogetispain');
-    console.log(header);
-    return this._http.post(this.url + request, null, { headers: header });
+    //console.log(header);
+    return this._http.post(this.url + request, null, {
+      headers: header,
+    });
   }
   getUsers(): Observable<any> {
     var request = '/S2VAPI/users';

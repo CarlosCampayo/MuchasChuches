@@ -13,6 +13,7 @@ export class UsersComponent implements OnInit {
 
   getUsers = () => {
     this._servicioHackaton.getUsers().subscribe((res) => {
+      console.log(res);
       this.users = res;
       console.log(this.users);
     });
