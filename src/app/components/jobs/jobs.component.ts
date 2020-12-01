@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/models/jobs/job';
+import { User } from 'src/app/models/users/user';
 import { HackatonService } from 'src/app/services/hackaton.service';
 
 @Component({
@@ -9,15 +10,54 @@ import { HackatonService } from 'src/app/services/hackaton.service';
 })
 export class JobsComponent implements OnInit {
   public jobs: Job[];
-  constructor(private _servicioHackaton: HackatonService) {}
+  public users: User[];
+  public usersOfJobSelected: User[];
+  public jobSelected: Job;
 
+  constructor(private _servicioHackaton: HackatonService) {
+    this.users = [];
+    this.jobs = [];
+    this.usersOfJobSelected = [];
+    this.jobSelected = null;
+  }
+  getUsers = () => {
+    this._servicioHackaton.getUsers().subscribe((res) => {
+      console.log(res);
+      this.users = res;
+      //console.log(this.users);
+    });
+  };
   getJobs = () => {
     this._servicioHackaton.getJobs().subscribe((res) => {
       this.jobs = res;
-      console.log(this.jobs);
+      this.jobSelected = this.jobs[0];
+      //console.log(this.jobs);
     });
+  };
+  getUsersOfJobs = () => {
+    for (var user of this.users) {
+      if (user.job == this.jobSelected.name) {
+        this.usersOfJobSelected.push(user);
+      }
+    }
+  };
+  getJobNameOfUser = (index) => {
+    for (var job of this.jobs) {
+      if (job.name == this.usersOfJobSelected[index].job) {
+        for (var job_grade of job.job_grades) {
+          if (job_grade.grade == this.usersOfJobSelected[index].job_grade) {
+            return job_grade.label;
+          }
+        }
+      }
+    }
+    return null;
+  };
+  selectJob = (index) => {
+    this.jobSelected = this.jobs[index];
   };
   ngOnInit(): void {
     this.getJobs();
+    this.getUsers();
   }
 }
