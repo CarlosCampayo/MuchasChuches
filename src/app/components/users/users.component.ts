@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Job } from 'src/app/models/jobs/job';
 import { User } from 'src/app/models/users/user';
+import { Global } from 'src/app/services/global';
 import { HackatonService } from 'src/app/services/hackaton.service';
 
 @Component({
@@ -12,7 +14,10 @@ export class UsersComponent implements OnInit {
   public users: User[];
   public userselected: User;
   private jobs: Job[];
-  constructor(private _servicioHackaton: HackatonService) {
+  constructor(
+    private _servicioHackaton: HackatonService,
+    private _activatedRoute: ActivatedRoute
+  ) {
     this.users = [];
     this.jobs = [];
     this.userselected = null;
@@ -23,6 +28,11 @@ export class UsersComponent implements OnInit {
       this.users = res;
       this.userselected = this.users[0];
       console.log(this.users);
+      this._activatedRoute.params.subscribe((params: Params) => {
+        console.log(params.id);
+        this.userselected = this.getUserById(params.id);
+        console.log(this.userselected);
+      });
     });
   };
   getJobs = () => {
@@ -46,8 +56,29 @@ export class UsersComponent implements OnInit {
   selectUser = (index) => {
     this.userselected = this.users[index];
   };
+  autenticarse = () => {
+    this._servicioHackaton.authenticate().subscribe(
+      (res) => {
+        //console.log(res);
+        Global.token = res.token;
+        this.getUsers();
+        this.getJobs();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+  getUserById = (id) => {
+    console.log('id:' + id);
+    for (var user of this.users) {
+      if (user.identifier == id) {
+        return user;
+      }
+    }
+    return null;
+  };
   ngOnInit(): void {
-    this.getUsers();
-    this.getJobs();
+    this.autenticarse();
   }
 }

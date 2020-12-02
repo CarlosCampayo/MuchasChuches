@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from 'src/app/models/jobs/job';
 import { User } from 'src/app/models/users/user';
+import { Global } from 'src/app/services/global';
 import { HackatonService } from 'src/app/services/hackaton.service';
 
 @Component({
@@ -56,8 +57,20 @@ export class JobsComponent implements OnInit {
   selectJob = (index) => {
     this.jobSelected = this.jobs[index];
   };
+  autenticarse = () => {
+    this._servicioHackaton.authenticate().subscribe(
+      (res) => {
+        //console.log(res);
+        Global.token = res.token;
+        this.getUsers();
+        this.getJobs();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
   ngOnInit(): void {
-    this.getJobs();
-    this.getUsers();
+    this.autenticarse();
   }
 }
