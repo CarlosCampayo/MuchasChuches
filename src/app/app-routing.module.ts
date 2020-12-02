@@ -5,7 +5,7 @@ import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   // {path:'',component:Principal},
-  { path: 'users', component: UsersComponent },
+  { path: '', component: UsersComponent },
   { path: 'jobs', component: JobsComponent },
 ];
 

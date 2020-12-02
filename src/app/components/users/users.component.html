@@ -1,1 +1,9 @@
 <p>users works!</p>
+<ul class="list-group row" *ngIf="users.length > 0">
+  <ng-template *ngFor="let user of users">
+    <li class="col-md-12 list-group-item" [routerLink]="['/users', user]">
+      {{ user.identity.name }} {{ user.identity.firstname }}
+      {{ user.identity.secondname }}
+    </li>
+  </ng-template>
+</ul>

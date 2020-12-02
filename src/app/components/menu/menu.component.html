@@ -1,3 +1,20 @@
-<p>menu works!</p>
+<!-- <p>menu works!</p>
 <button [routerLink]="['/users']">users</button>
-<button [routerLink]="['/jobs']">jobs</button>
+<button [routerLink]="['/jobs']">jobs</button> -->
+<nav class="navbar navbar-light bg-light justify-content-center">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <h6 class="nav-link">Menu</h6>
+    </li>
+    <hr />
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/users']">Users</a>
+    </li>
+    <hr />
+
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/jobs']">Jobs</a>
+    </li>
+  </ul>
+</nav>
