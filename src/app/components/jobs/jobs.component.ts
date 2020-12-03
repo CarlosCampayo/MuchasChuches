@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Job } from 'src/app/models/jobs/job';
 import { User } from 'src/app/models/users/user';
 import { Global } from 'src/app/services/global';
@@ -15,7 +16,10 @@ export class JobsComponent implements OnInit {
   public usersOfJobSelected: User[];
   public jobSelected: Job;
 
-  constructor(private _servicioHackaton: HackatonService) {
+  constructor(
+    private _servicioHackaton: HackatonService,
+    private _activatedRoute: ActivatedRoute
+  ) {
     this.users = [];
     this.jobs = [];
     this.usersOfJobSelected = [];
@@ -31,10 +35,29 @@ export class JobsComponent implements OnInit {
   getJobs = () => {
     this._servicioHackaton.getJobs().subscribe((res) => {
       this.jobs = res;
+      console.log('rdtr ' + this.jobs);
+      for (var job in this.jobs) {
+        console.log('this ' + job);
+      }
       this.jobSelected = this.jobs[0];
-      //console.log(this.jobs);
+      // console.log(this.jobs[0].name);
+      this._activatedRoute.params.subscribe((params: Params) => {
+        console.log(params.job);
+        if (params.job != undefined) {
+          this.jobSelected = this.getJobByName(params.job);
+        }
+        console.log(this.jobSelected);
+      });
     });
   };
+  getJobByName(name) {
+    for (var job of this.jobs) {
+      if (job.name == name) {
+        return job;
+      }
+    }
+    return null;
+  }
   getUsersOfJobs = () => {
     for (var user of this.users) {
       if (user.job == this.jobSelected.name) {
