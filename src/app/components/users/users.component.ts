@@ -27,10 +27,12 @@ export class UsersComponent implements OnInit {
       console.log(res);
       this.users = res;
       this.userselected = this.users[0];
-      console.log(this.users);
+      console.log(this.userselected);
       this._activatedRoute.params.subscribe((params: Params) => {
         console.log(params.id);
-        this.userselected = this.getUserById(params.id);
+        if (params.id != undefined) {
+          this.userselected = this.getUserById(params.id);
+        }
         console.log(this.userselected);
       });
     });
