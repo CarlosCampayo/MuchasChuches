@@ -1,1 +1,31 @@
-<p>jobs works!</p>
+<div class="row">
+    <div class="col-md-6">
+    <ul class="list-group row" >
+      <ng-container *ngFor="let j of stringjobs">
+        <li
+          class="col-md-12 list-group-item bg-dark"
+          [routerLink]="['/jobs', j]"
+        >
+          {{ j }} 
+        </li>
+      </ng-container>
+    </ul>
+    </div>
+    
+    <!--Tercera columna, detalles de usuario-->
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12 verde text-center"></div>
+        <div class="col-md-6 naranja">
+          <img src="./../../assets/images/personaje.jpg" class="img-fluid mt-1 pb-4" alt="Responsive Image" />
+        </div>
+        <div class="col-md-6 rosa">
+          <div class="col-md-12">Trabajo</div>
+          <div class="col-md-12">puesto y dinero</div>
+          <div class="col-md-12">f.nacimiento</div>
+          <div class="col-md-12">telefono</div>
+          <div class="col-md-12">vehiculos</div>
+        </div>
+      </div>
+    </div>
+    </div>
