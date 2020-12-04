@@ -15,7 +15,7 @@ export class JobsComponent implements OnInit {
   public users: User[];
   public usersOfJobSelected: User[];
   public jobSelected: Job;
-  public stringjobs : String[];
+  public stringjobs: String[];
 
   constructor(
     private _servicioHackaton: HackatonService,
@@ -25,6 +25,7 @@ export class JobsComponent implements OnInit {
     this.jobs = [];
     this.stringjobs = [];
     this.usersOfJobSelected = [];
+    this.stringjobs = [];
     this.jobSelected = null;
   }
   getUsers = () => {
@@ -36,10 +37,11 @@ export class JobsComponent implements OnInit {
   };
   getJobs = () => {
     this._servicioHackaton.getJobs().subscribe((res) => {
-      var trabajo = res;
-      console.log(trabajo);
-      for (var job in trabajo) {
-        console.log(job);
+      //console.log(res.bahamas);
+      for (var name in res) {
+        this.stringjobs.push(name);
+        //console.log(res[name]);
+        this.jobs.push(res[name]);
       }
 
       this.jobSelected = this.jobs[0];
