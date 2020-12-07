@@ -14,12 +14,14 @@ export class UsersComponent implements OnInit {
   public users: User[];
   public userselected: User;
   private jobs: Job[];
+  private stringjobs:String[];
   constructor(
     private _servicioHackaton: HackatonService,
     private _activatedRoute: ActivatedRoute
   ) {
     this.users = [];
     this.jobs = [];
+    this.stringjobs = [];
     this.userselected = null;
   }
   getUsers = () => {
@@ -39,7 +41,11 @@ export class UsersComponent implements OnInit {
   };
   getJobs = () => {
     this._servicioHackaton.getJobs().subscribe((res) => {
-      this.jobs = res;
+      for (var name in res) {
+        this.stringjobs.push(name);
+        //console.log(res[name]);
+        this.jobs.push(res[name]);
+      }
       console.log(this.jobs);
     });
   };
