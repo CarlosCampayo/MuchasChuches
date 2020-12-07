@@ -1,29 +1,102 @@
 <div class="row">
-<div class="col-md-6">
-<ul class="list-group row" *ngIf="users.length > 0">
-  <ng-container *ngFor="let user of users">
-    <li
-      class="col-md-12 list-group-item bg-dark"
-      [routerLink]="['/users', user.identifier]"
-    >
-      {{ user.identity.name }} {{ user.identity.firstname }}
-      {{ user.identity.secondname }}
-    </li>
-  </ng-container>
-</ul>
-</div>
-<!--Tercera columna, detalles de usuario-->
-<div class="col-md-6">
-  <div class="row">
-    <div class="col-md-12 verde text-center">JAKE ADAM MONTOYA</div>
-    <div class="col-md-6 naranja"></div>
-    <div class="col-md-6 rosa">
-      <div class="col-md-12">Trabajo</div>
-      <div class="col-md-12">puesto y dinero</div>
-      <div class="col-md-12">f.nacimiento</div>
-      <div class="col-md-12">telefono</div>
-      <div class="col-md-12">vehiculos</div>
+  <div class="col-md-6">
+    <ul class="scrolling list-group row" *ngIf="users.length > 0">
+      <ng-container *ngFor="let user of users">
+        <li
+          class="col-md-12 list-group-item bg-dark"
+          [routerLink]="['/users', user.identifier]"
+        >
+          {{ user.identity.name }} {{ user.identity.firstname }}
+          {{ user.identity.secondname }}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+
+  <!--Tercera columna, detalles de usuario-->
+  <div class="col-md-6">
+    <div class="row" *ngIf="userselected != null">
+      <div
+        class="col-md-12 verde text-center"
+        *ngIf="userselected.identity.sex == 'm'"
+      >
+        {{ userselected.identity.name }} {{ userselected.identity.firstname }}
+        {{ userselected.identity.secondname }}
+      </div>
+      <div
+        class="col-md-12 rosa text-center"
+        *ngIf="userselected.identity.sex == 'w'"
+      >
+        {{ userselected.identity.name }} {{ userselected.identity.firstname }}
+        {{ userselected.identity.secondname }}
+      </div>
+      <div class="col-md-6 naranja">
+        <img
+          src="./../../assets/images/personaje.jpg"
+          class="img-fluid mt-1 pb-4"
+          alt="Responsive Image"
+        />
+      </div>
+      <div class="col-md-6 rosa">
+        <ng-container>
+          <div class="row text-left">
+            <div class="col-md-6">F.Nacimiento:</div>
+            <div class="col-md-6">{{ userselected.identity.dateofbirth }}</div>
+          </div>
+          <div class="row text-left">
+            <div class="col-md-6">Telefono:</div>
+            <div class="col-md-6">{{ userselected.phone_number }}</div>
+          </div>
+          <div class="row text-left">
+            <div class="col-md-6">Trabajo:</div>
+            <div class="col-md-6">{{ userselected.job }}</div>
+          </div>
+          <!-- <div class="row text-left">
+            <div class="col-md-6">Salario:</div>
+            <div class="col-md-6">{{ getSalary() }}$</div>
+          </div> -->
+          <div class="row text-left">
+            <div class="col-md-6">Dinero:</div>
+            <div class="col-md-6">{{ userselected.bank_money }}$</div>
+          </div>
+          <div class="card">
+            <div
+              class="card-header"
+              id="headingThree"
+              style="background-color: violet"
+            >
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-block text-left collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Vehiculos
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseThree"
+              class="collapse text-dark"
+              aria-labelledby="headingThree"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <ul class="list-group row">
+                  <ng-container *ngFor="let vehicle of stringVehicles">
+                    <li class="col-md-12 list-group-item bg-dark text-white">
+                      {{ userselected.vehicles[vehicle].plate }}
+                    </li>
+                  </ng-container>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
   </div>
-</div>
 </div>
