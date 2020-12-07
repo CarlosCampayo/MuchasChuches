@@ -57,20 +57,20 @@ export class UsersComponent implements OnInit {
       // console.log(this.jobs);
     });
   };
-  // getSalary = () => {
-  //   for (var job of this.jobs) {
-  //     // console.log(job.name + '/' + this.userselected.job);
-  //     if (job.name == this.userselected.job) {
-  //       for (var job_grade in job.job_grades) {
-  //         console.log(job_grade);
-  //         if (job.job_grades[job_grade].grade == this.userselected.job_grade) {
-  //           return job.job_grades[job_grade].salary;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return null;
-  // };
+  getSalary = () => {
+    for (var job of this.jobs) {
+      // console.log(job.name + '/' + this.userselected.job);
+      if (job.name == this.userselected.job) {
+        for (var job_grade in job.job_grades) {
+          console.log(job_grade);
+          if (job.job_grades[job_grade].grade == this.userselected.job_grade) {
+            return job.job_grades[job_grade].salary;
+          }
+        }
+      }
+    }
+    return null;
+  };
   selectUser = (index) => {
     this.userselected = this.users[index];
   };
