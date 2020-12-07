@@ -48,12 +48,13 @@ export class JobsComponent implements OnInit {
       // console.log(this.jobs[0].name);
       this._activatedRoute.params.subscribe((params: Params) => {
         /*Pruebas*/
-          console.log(params.job);
+        console.log(params.job);
         /*pruebas end*/
         if (params.job != undefined) {
           this.jobSelected = this.getJobByName(params.job);
         }
         console.log(this.jobSelected);
+        this.getUsersOfJobSelected();
       });
     });
   };
@@ -65,19 +66,35 @@ export class JobsComponent implements OnInit {
     }
     return null;
   }
-  getUsersOfJobs = () => {
+  getUsersOfJobSelected = () => {
+    this.usersOfJobSelected = [];
     for (var user of this.users) {
       if (user.job == this.jobSelected.name) {
+        console.log(user);
         this.usersOfJobSelected.push(user);
       }
     }
   };
   getJobNameOfUser = (index) => {
+    // if (job.name == this.userselected.job) {
+    //   for (var job_grade in job.job_grades) {
+    //     console.log(job_grade);
+    //     if (job.job_grades[job_grade].grade == this.userselected.job_grade) {
+    //       return job.job_grades[job_grade].salary;
+    //     }
+    //   }
+    // }
     for (var job of this.jobs) {
+      // console.log(this.usersOfJobSelected[index].job + '/' + job.name);
       if (job.name == this.usersOfJobSelected[index].job) {
-        for (var job_grade of job.job_grades) {
-          if (job_grade.grade == this.usersOfJobSelected[index].job_grade) {
-            return job_grade.label;
+        for (var job_grade in job.job_grades) {
+          if (
+            job.job_grades[job_grade].grade ==
+            this.usersOfJobSelected[index].job_grade
+          ) {
+            console.log(job.job_grades[job_grade].label);
+
+            return job.job_grades[job_grade].label;
           }
         }
       }
