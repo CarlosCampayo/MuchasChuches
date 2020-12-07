@@ -48,11 +48,17 @@
         display: flex;
         align-items: center;
       }
-      .scrolling{
+      .scrolling {
         max-height: 450px;
+        overflow-y: hidden;
         margin-bottom: 5px;
-        overflow:scroll;
-}
+        overflow-x: auto;
+        overflow-block: initial;
+        scroll-snap-type: x mandatory;
+      }
+      .li-scroll {
+        scroll-snap-align: center;
+      }
     </style>
 
     <body class="bg-dark">

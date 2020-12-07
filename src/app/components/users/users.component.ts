@@ -14,7 +14,8 @@ export class UsersComponent implements OnInit {
   public users: User[];
   public userselected: User;
   private jobs: Job[];
-  private stringjobs:String[];
+  private stringjobs: String[];
+  private stringVehicles: String[];
   constructor(
     private _servicioHackaton: HackatonService,
     private _activatedRoute: ActivatedRoute
@@ -22,18 +23,25 @@ export class UsersComponent implements OnInit {
     this.users = [];
     this.jobs = [];
     this.stringjobs = [];
+    this.stringVehicles = [];
     this.userselected = null;
   }
   getUsers = () => {
     this._servicioHackaton.getUsers().subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.users = res;
       this.userselected = this.users[0];
-      console.log(this.userselected);
+      // console.log(this.userselected);
       this._activatedRoute.params.subscribe((params: Params) => {
         console.log(params.id);
         if (params.id != undefined) {
           this.userselected = this.getUserById(params.id);
+          console.log(this.userselected.vehicles[0]);
+          this.stringVehicles = [];
+          for (var vehicle in this.userselected.vehicles) {
+            console.log(vehicle);
+            this.stringVehicles.push(vehicle);
+          }
         }
         console.log(this.userselected);
       });
@@ -46,21 +54,23 @@ export class UsersComponent implements OnInit {
         //console.log(res[name]);
         this.jobs.push(res[name]);
       }
-      console.log(this.jobs);
+      // console.log(this.jobs);
     });
   };
-  getSalary = () => {
-    for (var job of this.jobs) {
-      if (job.name == this.userselected.job) {
-        for (var job_grade of job.job_grades) {
-          if (job_grade.grade == this.userselected.job_grade) {
-            return job_grade.salary;
-          }
-        }
-      }
-    }
-    return null;
-  };
+  // getSalary = () => {
+  //   for (var job of this.jobs) {
+  //     // console.log(job.name + '/' + this.userselected.job);
+  //     if (job.name == this.userselected.job) {
+  //       for (var job_grade in job.job_grades) {
+  //         console.log(job_grade);
+  //         if (job.job_grades[job_grade].grade == this.userselected.job_grade) {
+  //           return job.job_grades[job_grade].salary;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return null;
+  // };
   selectUser = (index) => {
     this.userselected = this.users[index];
   };
@@ -78,7 +88,7 @@ export class UsersComponent implements OnInit {
     );
   };
   getUserById = (id) => {
-    console.log('id:' + id);
+    // console.log('id:' + id);
     for (var user of this.users) {
       if (user.identifier == id) {
         return user;
