@@ -13,6 +13,6 @@ export class User {
     public phone_calls: [],
     public validated: boolean,
     public house_id: number,
-    public vehicles: Object[]
+    public vehicles: Vehicle[]
   ) {}
 }
