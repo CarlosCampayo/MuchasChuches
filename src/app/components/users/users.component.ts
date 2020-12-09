@@ -120,19 +120,19 @@ export class UsersComponent implements OnInit {
   selectUser = (index) => {
     this.userselected = this.users[index];
   };
-  autenticarse = () => {
-    this._servicioHackaton.authenticate().subscribe(
-      (res) => {
-        //console.log(res);
-        Global.token = res.token;
-        this.getUsers();
-        this.getJobs();
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  };
+  // autenticarse = () => {
+  //   this._servicioHackaton.authenticate().subscribe(
+  //     (res) => {
+  //       //console.log(res);
+  //       Global.token = res.token;
+  //       this.getUsers();
+  //       this.getJobs();
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // };
   getUserById = (id) => {
     // console.log('id:' + id);
     for (var user of this.users) {
@@ -143,6 +143,8 @@ export class UsersComponent implements OnInit {
     return null;
   };
   ngOnInit(): void {
-    this.autenticarse();
+    // this.autenticarse();
+    this.getUsers();
+    this.getJobs();
   }
 }

@@ -103,20 +103,22 @@ export class JobsComponent implements OnInit {
   selectJob = (index) => {
     this.jobSelected = this.jobs[index];
   };
-  autenticarse = () => {
-    this._servicioHackaton.authenticate().subscribe(
-      (res) => {
-        //console.log(res);
-        Global.token = res.token;
-        this.getUsers();
-        this.getJobs();
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  };
+  // autenticarse = () => {
+  //   this._servicioHackaton.authenticate().subscribe(
+  //     (res) => {
+  //       //console.log(res);
+  //       Global.token = res.token;
+  //       this.getUsers();
+  //       this.getJobs();
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // };
   ngOnInit(): void {
-    this.autenticarse();
+    this.getUsers();
+    this.getJobs();
+    // this.autenticarse();
   }
 }

@@ -11,11 +11,11 @@ export class HackatonService {
   constructor(public _http: HttpClient) {
     this.url = Global.urlsogeti;
   }
-  authenticate(): Observable<any> {
+  // 'S2VTournament'
+  // 'sogetispain'
+  authenticate(user, password): Observable<any> {
     var request = '/S2VAPI/authenticate';
-    var header = new HttpHeaders()
-      .set('user', 'S2VTournament')
-      .set('password', 'sogetispain');
+    var header = new HttpHeaders().set('user', user).set('password', password);
     //console.log(header);
     return this._http.post(this.url + request, null, {
       headers: header,
