@@ -1,5 +1,21 @@
 <div class="row">
   <div class="col-md-6">
+    <form class="form my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Introduce Nombre/Apellido"
+        aria-label="Buscador"
+        #cajabuscador
+      />
+      <button
+        class="btn btn-outline-light my-2 my-sm-0"
+        type="button"
+        (click)="search()"
+      >
+        Buscar
+      </button>
+    </form>
     <ul class="scrolling list-group row" *ngIf="users.length > 0">
       <ng-container *ngFor="let user of users">
         <li
@@ -59,7 +75,7 @@
             <div class="col-md-6">Dinero:</div>
             <div class="col-md-6">{{ userselected.bank_money }}$</div>
           </div>
-          <ng-container *nfIf="userselected.licenses.length > 0">
+          <ng-container *ngIf="userselected.licenses.length > 0">
             <div class="row text-left">
               <img
                 src="./../../../assets/images/gtaV.gif"
