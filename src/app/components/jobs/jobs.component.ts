@@ -30,7 +30,7 @@ export class JobsComponent implements OnInit {
   }
   getUsers = () => {
     this._servicioHackaton.getUsers().subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.users = res;
       //console.log(this.users);
     });
@@ -43,17 +43,16 @@ export class JobsComponent implements OnInit {
         //console.log(res[name]);
         this.jobs.push(res[name]);
       }
-
       this.jobSelected = this.jobs[0];
       // console.log(this.jobs[0].name);
       this._activatedRoute.params.subscribe((params: Params) => {
         /*Pruebas*/
-        console.log(params.job);
+        // console.log(params.job);
         /*pruebas end*/
         if (params.job != undefined) {
           this.jobSelected = this.getJobByName(params.job);
         }
-        console.log(this.jobSelected);
+        // console.log(this.jobSelected);
         this.getUsersOfJobSelected();
       });
     });
