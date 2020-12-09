@@ -21,14 +21,19 @@ export class HackatonService {
       headers: header,
     });
   }
+
   getUsers(): Observable<any> {
     var request = '/S2VAPI/users';
+    var src = './../../assets/json/user_dummy2.json';
     var header = new HttpHeaders().set('access-token', Global.token);
-    return this._http.get(this.url + request, { headers: header });
+     return this._http.get(this.url + request, { headers: header });
+    //return this._http.get(src);
   }
   getJobs(): Observable<any> {
     var request = '/S2VAPI/jobs';
+    var src = './../../assets/json/jobs_dummy_1.json';
     var header = new HttpHeaders().set('access-token', Global.token);
-    return this._http.get(this.url + request, { headers: header });
+     return this._http.get(this.url + request, { headers: header });
+    //return this._http.get(src);
   }
 }

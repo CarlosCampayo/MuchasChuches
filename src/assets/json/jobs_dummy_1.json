@@ -1,0 +1,536 @@
+{
+    "bahamas": {
+        "label": "Trabajador Bahamas",
+        "name": "bahamas",
+        "job_grades": {
+            "barman": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Barman",
+                "name": "barman",
+                "job_name": "bahamas"
+            },
+            "viceboss": {
+                "grade": 2,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Subjefe",
+                "name": "boss",
+                "job_name": "bahamas"
+            },
+            "dancer": {
+                "grade": 1,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Bailarin/a",
+                "name": "dancer",
+                "job_name": "bahamas"
+            },
+            "boss": {
+                "grade": 3,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "bahamas"
+            }
+        }
+    },
+    "Shop_18": {
+        "label": "Tendero",
+        "name": "Shop_18",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_18"
+            }
+        }
+    },
+    "desempleado": {
+        "label": "Desempleado",
+        "name": "desempleado",
+        "job_grades": {
+            "desempleado": {
+                "grade": 0,
+                "salary": 50,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "En Paro",
+                "name": "desempleado",
+                "job_name": "desempleado"
+            }
+        }
+    },
+    "Shop_2": {
+        "label": "Tendero",
+        "name": "Shop_2",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_2"
+            }
+        }
+    },
+    "Shop_19": {
+        "label": "Tendero",
+        "name": "Shop_19",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_19"
+            }
+        }
+    },
+    "Shop_1": {
+        "label": "Tendero",
+        "name": "Shop_1",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_1"
+            }
+        }
+    },
+    "cardealer": {
+        "label": "Vendedor de Coches",
+        "name": "cardealer",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "cardealer"
+            }
+        }
+    },
+    "unicorn": {
+        "label": "Trabajador Unicorn Love",
+        "name": "unicorn",
+        "job_grades": {
+            "barman": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Barman",
+                "name": "barman",
+                "job_name": "unicorn"
+            },
+            "viceboss": {
+                "grade": 2,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Subjefe",
+                "name": "boss",
+                "job_name": "unicorn"
+            },
+            "dancer": {
+                "grade": 1,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Bailarin/a",
+                "name": "dancer",
+                "job_name": "unicorn"
+            },
+            "boss": {
+                "grade": 3,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "unicorn"
+            }
+        }
+    },
+    "Shop_20": {
+        "label": "Tendero",
+        "name": "Shop_20",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_20"
+            }
+        }
+    },
+    "cardealerPaleto": {
+        "label": "Vendedor de Coches",
+        "name": "cardealerPaleto",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "cardealerPaleto"
+            }
+        }
+    },
+    "Shop_8": {
+        "label": "Tendero",
+        "name": "Shop_8",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_8"
+            }
+        }
+    },
+    "Shop_16": {
+        "label": "Tendero",
+        "name": "Shop_16",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_16"
+            }
+        }
+    },
+    "Shop_7": {
+        "label": "Tendero",
+        "name": "Shop_7",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_7"
+            }
+        }
+    },
+    "cardealer1": {
+        "label": "Vendedor de Coches",
+        "name": "cardealer1",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "cardealer1"
+            }
+        }
+    },
+    "Shop_13": {
+        "label": "Tendero",
+        "name": "Shop_13",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_13"
+            }
+        }
+    },
+    "mechanicSenora": {
+        "label": "Mecánicos",
+        "name": "mechanicSenora",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "mechanicSenora"
+            }
+        }
+    },
+    "Shop_15": {
+        "label": "Tendero",
+        "name": "Shop_15",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_15"
+            }
+        }
+    },
+    "Shop_3": {
+        "label": "Tendero",
+        "name": "Shop_3",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_3"
+            }
+        }
+    },
+    "mechanicSouthCentral": {
+        "label": "Mecánicos",
+        "name": "mechanicSouthCentral",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "mechanicSouthCentral"
+            }
+        }
+    },
+    "Shop_10": {
+        "label": "Tendero",
+        "name": "Shop_10",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_10"
+            }
+        }
+    },
+    "ambulance": {
+        "label": "Médico",
+        "name": "ambulance",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "ambulance"
+            }
+        }
+    },
+    "Shop_11": {
+        "label": "Tendero",
+        "name": "Shop_11",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_11"
+            }
+        }
+    },
+    "mechanicCentral": {
+        "label": "Mecánicos",
+        "name": "mechanicCentral",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "mechanicCentral"
+            }
+        }
+    },
+    "Shop_12": {
+        "label": "Tendero",
+        "name": "Shop_12",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_12"
+            }
+        }
+    },
+    "Shop_4": {
+        "label": "Tendero",
+        "name": "Shop_4",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_4"
+            }
+        }
+    },
+    "mechanicPaleto": {
+        "label": "Mecánicos",
+        "name": "mechanicPaleto",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "mechanicPaleto"
+            }
+        }
+    },
+    "Shop_9": {
+        "label": "Tendero",
+        "name": "Shop_9",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_9"
+            }
+        }
+    },
+    "Shop_17": {
+        "label": "Tendero",
+        "name": "Shop_17",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_17"
+            }
+        }
+    },
+    "Shop_6": {
+        "label": "Tendero",
+        "name": "Shop_6",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_6"
+            }
+        }
+    },
+    "police": {
+        "label": "Policía",
+        "name": "police",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "police"
+            }
+        }
+    },
+    "Shop_14": {
+        "label": "Tendero",
+        "name": "Shop_14",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_14"
+            }
+        }
+    },
+    "Shop_5": {
+        "label": "Tendero",
+        "name": "Shop_5",
+        "job_grades": {
+            "boss": {
+                "grade": 0,
+                "salary": 200,
+                "skin_male": [],
+                "skin_female": [],
+                "label": "Jefe",
+                "name": "boss",
+                "job_name": "Shop_5"
+            }
+        }
+    }
+}
