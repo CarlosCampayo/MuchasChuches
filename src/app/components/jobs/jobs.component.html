@@ -3,10 +3,7 @@
     <ng-container *ngIf="jobs.length > 0">
       <ul class="scrolling overflow-auto list-group row">
         <ng-container *ngFor="let job of jobs">
-          <li
-            class="col-md-12 list-group-item bg-dark li-scroll"
-            [routerLink]="['/jobs', job.name]"
-          >
+          <li class="col-md-12 list-group-item bg-dark li-scroll" [routerLink]="['/jobs', job.name]">
             {{ job.name }}
           </li>
         </ng-container>
@@ -19,10 +16,7 @@
     <ng-container *ngIf="usersOfJobSelected.length > 0">
       <ul class="scrolling overflow-auto list-group row">
         <ng-container *ngFor="let user of usersOfJobSelected">
-          <li
-            class="col-md-12 list-group-item bg-dark li-scroll"
-            [routerLink]="['/users', user.identifier]"
-          >
+          <li class="col-md-12 list-group-item bg-dark li-scroll" [routerLink]="['/users', user.identifier]">
             {{ user.identity.name }}
             {{ getJobNameOfUser(user.job_grade) }}
           </li>

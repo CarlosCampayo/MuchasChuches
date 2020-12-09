@@ -1,29 +1,15 @@
 <div class="row">
-  <div class="col-md-6">
-    <form class="form my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="text"
-        placeholder="Introduce Nombre/Apellido"
-        aria-label="Buscador"
-        #cajabuscador
-      />
-      <button
-        class="btn btn-outline-light my-2 my-sm-0"
-        type="button"
-        (click)="search()"
-      >
+  <div class="col-md-6 border border-dark">
+    <form class="form my-2 my-lg-0 pb-1">
+      <input class="form-control mr-sm-2" type="text" placeholder="Introduce Nombre/Apellido" aria-label="Buscador" #cajabuscador/>
+      <button class="btn btn-outline-light my-2 my-sm-0" type="button" (click)="search()">
         Buscar
       </button>
     </form>
     <ul class="scrolling list-group row" *ngIf="users.length > 0">
       <ng-container *ngFor="let user of users">
-        <li
-          class="col-md-12 list-group-item bg-dark"
-          [routerLink]="['/users', user.identifier]"
-        >
-          {{ user.identity.name }} {{ user.identity.firstname }}
-          {{ user.identity.secondname }}
+        <li class="col-md-12 list-group-item bg-dark" [routerLink]="['/users', user.identifier]">
+          {{ user.identity.name }} {{ user.identity.firstname }} {{ user.identity.secondname }}
         </li>
       </ng-container>
     </ul>
@@ -32,85 +18,54 @@
   <!--Tercera columna, detalles de usuario-->
   <div class="col-md-6">
     <div class="row" *ngIf="userselected != null">
-      <div
-        class="col-md-12 verde text-center"
-        *ngIf="userselected.identity.sex == 'm'"
-      >
-        {{ userselected.identity.name }} {{ userselected.identity.firstname }}
-        {{ userselected.identity.secondname }}
+      <div class="col-md-12 verde text-center bg-dark text-white pt-2" *ngIf="userselected.identity.sex == 'm'">
+        <h4>{{ userselected.identity.name }} {{ userselected.identity.firstname }} {{ userselected.identity.secondname }}</h4>
       </div>
-      <div
-        class="col-md-12 rosa text-center"
-        *ngIf="userselected.identity.sex == 'w'"
-      >
-        {{ userselected.identity.name }} {{ userselected.identity.firstname }}
-        {{ userselected.identity.secondname }}
+      <div class="col-md-12 rosa text-center" *ngIf="userselected.identity.sex == 'w'">
+        {{ userselected.identity.name }} {{ userselected.identity.firstname }} {{ userselected.identity.secondname }}
       </div>
-      <div class="col-md-6 naranja">
-        <img
-          src="./../../assets/images/personaje.jpg"
-          class="img-fluid mt-1 pb-4"
-          alt="Responsive Image"
-        />
+      <div class="col-md-6">
+        <img src="./../../assets/images/personaje.jpg" class="img-fluid mt-1 pb-4" alt="Responsive Image"/>
       </div>
-      <div class="col-md-6 rosa">
+      <div class="col-md-6">
         <ng-container>
-          <div class="row text-left">
+          <div class="row text-left border border-dark">
             <div class="col-md-6">F.Nacimiento:</div>
             <div class="col-md-6">{{ userselected.identity.dateofbirth }}</div>
           </div>
-          <div class="row text-left">
+          <div class="row text-left border border-dark">
             <div class="col-md-6">Telefono:</div>
             <div class="col-md-6">{{ userselected.phone_number }}</div>
           </div>
-          <div class="row text-left">
+          <div class="row text-left border border-dark">
             <div class="col-md-6">Trabajo:</div>
             <div class="col-md-6">{{ userselected.job }}</div>
           </div>
-          <div class="row text-left">
+          <div class="row text-left border border-dark">
             <div class="col-md-6">Salario:</div>
             <div class="col-md-6">{{ getSalary() }}$</div>
           </div>
-          <div class="row text-left">
+          <div class="row text-left border border-dark">
             <div class="col-md-6">Dinero:</div>
             <div class="col-md-6">{{ userselected.bank_money }}$</div>
           </div>
           <ng-container *ngIf="userselected.licenses.length > 0">
             <div class="row text-left">
-              <img
-                src="./../../../assets/images/gtaV.gif"
-                alt="Logo GTA"
-                class="img-fluid"
-              />
+              <img src="./../../../assets/images/gtaV.gif" alt="Logo GTA" class="img-fluid"/>
             </div>
           </ng-container>
 
-          <div class="card">
-            <div
-              class="card-header"
-              id="headingThree"
-              style="background-color: violet"
-            >
+          <!--<div class="card bg-dark">-->
+            <div class="card-header" id="headingThree">
               <h2 class="mb-0">
-                <button
-                  class="btn btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+                <button class="btn btn-outline-light my-2 my-sm-0 collapsed" type="button" data-toggle="collapse" 
+                        data-target="#vehiculos" aria-expanded="false" aria-controls="vehiculos">
                   Vehiculos
                 </button>
               </h2>
             </div>
-            <div
-              id="collapseThree"
-              class="collapse text-dark"
-              aria-labelledby="headingThree"
-              data-parent="#accordionExample"
-            >
-              <div class="card-body">
+            <div id="vehiculos" class="collapse text-dark" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body ">
                 <ul class="list-group row">
                   <ng-container *ngFor="let vehicle of stringVehicles">
                     <li class="col-md-12 list-group-item bg-dark text-white">
@@ -120,7 +75,8 @@
                 </ul>
               </div>
             </div>
-          </div>
+          <!--</div>-->
+          
         </ng-container>
       </div>
     </div>

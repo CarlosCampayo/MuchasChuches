@@ -11,8 +11,8 @@ import { HackatonService } from './services/hackaton.service';
 export class AppComponent {
   title = 'muchaschuchessogeti';
   public valido: Boolean;
-  private userDefecto: String;
-  private passwordDefecto: String;
+  public userDefecto: String;
+  public passwordDefecto: String;
   @ViewChild('cajauser') cajauser: ElementRef;
   @ViewChild('cajapassword') cajapassword: ElementRef;
   constructor(

@@ -13,12 +13,16 @@
       crossorigin="anonymous"
     />
     <style>
+      @font-face{
+        font-family:"chalet";
+        src: url(assets/fonts/ChaletLondonNineteenSixty.ttf) format('ttf');
+      }
       div[class^="col-"] {
         /*{border: 1px solid white;}*/
       }
 
       .verde {
-        background-color: rgba(71, 235, 247, 0.712);
+        background-color: rgba(62, 64, 65, 0.1);
         color: white;
       }
 
@@ -41,9 +45,10 @@
       }
 
       .azul {
-        background-color: blue;
+        background-color: rgb(253, 165, 2);
         height: 50px;
-        color: white;
+        color: black;
+        font-weight: bold;
         display: flex;
         align-items: center;
       }
@@ -58,9 +63,13 @@
       .li-scroll {
         scroll-snap-align: center;
       }
+      .fondo{
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.75) 100%), url(assets/images/fondoweb.png);;
+        font-family: "chalet";
+      }
     </style>
 
-    <body class="bg-dark">
+    <body class="fondo">
       <app-root></app-root>
       <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -1,0 +1,29 @@
+[
+    {
+        "identifier": "fivem:1281144",
+        "identity": {
+            "name": "Marco",
+            "firstname": "White",
+            "secondname": "Mont",
+            "sex": "m",
+            "dateofbirth": "1988-01-24",
+            "height": "174"
+        },
+        "job": "police",
+        "job_grade": 0,
+        "bank_money": 50000,
+        "phone_number": "501-6186",
+        "licenses": {
+            "weapon": "weapon"
+        },
+        "phone_calls": [],
+        "validated": false,
+        "house_id": null,
+        "vehicles": {
+            "GZM 372": {
+                "model": "cogcabrio",
+                "plate": "GZM 372"
+            }
+        }
+    }
+]
